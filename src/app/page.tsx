@@ -1,92 +1,22 @@
 'use client'
 
+import { useStoreApi } from '@/api/storeApi'
 import { Card } from '@/components/Card'
 import { Cart } from '@/components/Cart'
 import { useOpenCart } from '@/contexts/useOpenCart'
 import { useCartStore } from '@/contexts/useStore'
+import { ProductProps } from '@/schemas/productSchema'
 import { AnimatePresence, motion } from 'framer-motion'
-
-const data = [
-  {
-    id: 1,
-    name: 'Famous Brand 1',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 2,
-    name: 'Famous Brand 2',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 3,
-    name: 'Famous Brand 3',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 4,
-    name: 'Famous Brand 4',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 5,
-    name: 'Famous Brand 5',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 6,
-    name: 'Famous Brand 6',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 7,
-    name: 'Famous Brand 7',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 8,
-    name: 'Famous Brand 8',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 9,
-    name: 'Famous Brand 9',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 10,
-    name: 'Famous Brand 10',
-    price: '2499',
-    description: 'Product description',
-    photo: 'https://via.placeholder.com/150',
-  },
-]
 
 export default function Home() {
   const { addProduct } = useCartStore()
   const { cartOpen } = useOpenCart()
+  const { data } = useStoreApi()
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between py-12 lg:p-24">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
-        {data.map((item, index) => (
+        {data?.data.products.map((item: ProductProps, index: number) => (
           <motion.div
             key={item.id}
             layoutId={`card-${index}`}
