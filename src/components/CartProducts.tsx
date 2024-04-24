@@ -17,10 +17,10 @@ export function CartProducts(product: ProductProps) {
   return (
     <div className="flex flex-col relative bg-white rounded-xl justify-between items-center lg:flex-row lg:p-5">
       <button
-        className="absolute right-3 top-2 lg:-right-4 lg:-top-4 lg:bg-black lg:rounded-full lg:p-1"
+        className="absolute right-3 top-2 lg:-right-3 lg:-top-3 lg:bg-black lg:rounded-full lg:p-1"
         onClick={handleRemoveProduct}
       >
-        <XIcon size={35} color="white" fill="black" />
+        <XIcon size={25} color="white" fill="black" />
       </button>
 
       <img
