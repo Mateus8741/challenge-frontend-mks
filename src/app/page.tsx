@@ -1,9 +1,12 @@
 'use client'
 
 import { Card } from '@/components/Card'
+import { useCartStore } from '@/contexts/useStore'
 import { motion } from 'framer-motion'
 
 export default function Home() {
+  const { addProduct } = useCartStore()
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between py-12 lg:p-24">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
@@ -16,10 +19,21 @@ export default function Home() {
             transition={{ delay: index * 0.2 }}
           >
             <Card
-              name="Product title"
-              price={2499}
-              description="Product description"
-              photo="https://via.placeholder.com/150"
+              data={{
+                name: 'Product name',
+                price: '2499',
+                description: 'Product description',
+                photo: 'https://via.placeholder.com/150',
+              }}
+              onClick={() =>
+                addProduct({
+                  id: index,
+                  name: 'Product name',
+                  price: '2499',
+                  description: 'Product description',
+                  photo: 'https://via.placeholder.com/150',
+                })
+              }
             />
           </motion.div>
         ))}

@@ -1,9 +1,17 @@
 'use client'
 
+import { useCartStore } from '@/contexts/useStore'
 import { ShoppingCart } from 'lucide-react'
 import { Logo } from './Logo'
 
 export function Nav() {
+  const { products } = useCartStore()
+
+  const cartQuantityTotal = products.reduce(
+    (total, product) => total + product.quantity,
+    0,
+  )
+
   function handleCart() {
     console.log('Cart clicked')
   }
@@ -17,7 +25,7 @@ export function Nav() {
         onClick={handleCart}
       >
         <ShoppingCart size={24} color="black" fill="black" />
-        <h3 className="font-bold">0</h3>
+        <h3 className="font-bold">{cartQuantityTotal}</h3>
       </button>
     </nav>
   )
