@@ -17,7 +17,7 @@ export function Card({
   ...props
 }: CardProps) {
   return (
-    <div className="w-[20rem] h-[285] bg-white rounded-lg shadow-lg">
+    <div className="w-[20rem] h-[285] bg-white rounded-lg shadow-xl">
       <div className="flex flex-col p-5">
         <img src={imageUrl} alt="Placeholder" className="rounded-lg" />
 
