@@ -15,9 +15,9 @@ export function CartProducts(product: ProductProps) {
   }
 
   return (
-    <div className="flex flex-col relative bg-white rounded-xl justify-between items-center lg:flex-row lg:p-5">
+    <div className="flex flex-col relative bg-white rounded-xl mt-3 justify-between items-center lg:flex-row lg:p-5">
       <button
-        className="absolute right-3 top-2 lg:-right-3 lg:-top-3 lg:bg-black lg:rounded-full lg:p-1"
+        className="absolute -right-3 -top-3 bg-black rounded-full p-1"
         onClick={handleRemoveProduct}
       >
         <XIcon size={25} color="white" fill="black" />
@@ -29,7 +29,7 @@ export function CartProducts(product: ProductProps) {
         className="w-52 h-52 rounded-lg mt-2 lg:mt-0 lg:w-20 lg:h-20"
       />
 
-      <p className="text-bg-price text-center mt-2 font-normal lg:mt-0">
+      <p className="text-bg-price text-left mt-2 font-normal lg:mt-0 lg:ml-3">
         {product.name}
       </p>
 
