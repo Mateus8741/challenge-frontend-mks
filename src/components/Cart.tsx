@@ -20,8 +20,8 @@ export function Cart() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="h-full w-[350px] lg:w-5/12 bg-bg-nav overflow-y-auto shadow-lg">
-        <div className="p-6 lg:px-12">
+      <div className="h-full w-[350px] lg:w-[30rem] bg-bg-nav overflow-y-auto shadow-lg">
+        <div className="p-6 lg:p-12">
           <div className="flex flex-row justify-between items-center">
             <h2 className="text-3xl text-white font-bold">
               Carrinho <br />
@@ -81,7 +81,7 @@ export function Cart() {
         </div>
 
         {products.length > 0 && (
-          <div className="w-full mt-5 lg:w-ful">
+          <div className="w-full">
             <button
               className="bg-black w-full text-white font-bold p-5"
               onClick={() => {
