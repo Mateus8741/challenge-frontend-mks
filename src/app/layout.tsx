@@ -2,6 +2,7 @@ import { Nav } from '@/components/Nav'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
+import { Provider } from './provider'
 
 const inter = Montserrat({ subsets: ['latin'] })
 
@@ -18,13 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav />
-        {children}
-        <footer className="flex items-center justify-center h-12 bg-gray-200">
-          <p className="text-gray-600 text-sm font-medium">
-            MKS Sistemas &copy; Todos os direitos reservados
-          </p>
-        </footer>
+        <Provider>
+          <Nav />
+          {children}
+          <footer className="flex items-center justify-center h-12 bg-gray-200">
+            <p className="text-gray-600 text-sm font-medium">
+              MKS Sistemas &copy; Todos os direitos reservados
+            </p>
+          </footer>
+        </Provider>
       </body>
     </html>
   )
