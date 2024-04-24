@@ -3,19 +3,24 @@ import { useCartStore } from '@/contexts/useStore'
 import { formatMoney } from '@/utils/formatMoney'
 import { motion } from 'framer-motion'
 import { XIcon } from 'lucide-react'
+import { Counter } from './Counter'
 
 export function Cart() {
   const { products } = useCartStore()
   const { setCartOpen } = useOpenCart()
 
+  const total = products.reduce((acc, product) => {
+    return acc + product.quantity * Number(product.price)
+  }, 0)
+
   return (
     <motion.div
-      className="fixed top-0 right-0 h-full w-full bg-gray-600 bg-opacity-75 z-50"
+      className="fixed top-0 h-full w-full bg-gray-600 bg-opacity-75 z-50 flex justify-end items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="fixed top-0 right-0 p-5 h-full w-[350px] lg:w-5/12 lg:px-12 bg-bg-nav shadow-lg">
+      <div className="p-5 h-full w-[350px] lg:w-5/12 lg:px-12 bg-bg-nav overflow-y-auto shadow-lg">
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-3xl text-white font-bold">
             Carrinho <br />
@@ -55,13 +60,18 @@ export function Cart() {
               </p>
 
               <div className="flex flex-row justify-between items-center w-full px-5 py-3">
-                contador
+                <Counter productId={Number(product.id)} />
                 <p className="font-bold text-lg bg-bg-price py-1 px-2.5 rounded-lg text-white">
                   {formatMoney(Number(product.price))}
                 </p>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-between items-center mt-10">
+          <p className="text-white text-lg font-bold">Total</p>
+          <p className="text-white text-lg font-bold">{formatMoney(total)}</p>
         </div>
       </div>
     </motion.div>

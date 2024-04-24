@@ -30,3 +30,19 @@ export function Remove(products: ProductCartProps[], id: string) {
 
   return updatedProducts.filter((product) => product.quantity > 0)
 }
+
+export function Increase(products: ProductCartProps[], id: string) {
+  return products.map((product) =>
+    product.id === Number(id)
+      ? { ...product, quantity: product.quantity + 1 }
+      : product,
+  )
+}
+
+export function Decrease(products: ProductCartProps[], id: string) {
+  return products.map((product) =>
+    product.id === Number(id)
+      ? { ...product, quantity: product.quantity - 1 }
+      : product,
+  )
+}
