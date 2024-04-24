@@ -31,18 +31,23 @@ type CounterProps = {
 }
 
 export function Counter({ productId }: CounterProps) {
-  const { products, increaseProduct, decreaseProduct } = useCartStore()
+  const { products, increaseProduct, decreaseProduct, removeProduct } =
+    useCartStore()
+
+  const productCount =
+    products.find((product) => product.id === productId)?.quantity ?? 0
 
   function handleIncrease() {
     increaseProduct(String(productId))
   }
 
   function handleDecrease() {
-    decreaseProduct(String(productId))
+    if (productCount === 1) {
+      removeProduct(String(productId))
+    } else {
+      decreaseProduct(String(productId))
+    }
   }
-
-  const productCount =
-    products.find((product) => product.id === productId)?.quantity ?? 0
 
   return (
     <div className="flex flex-row items-center justify-between p-2 border border-gray-200 rounded-md w-28 h-10">
