@@ -1,11 +1,15 @@
 'use client'
 
 import { Card } from '@/components/Card'
+import { Cart } from '@/components/Cart'
+import { useOpenCart } from '@/contexts/useOpenCart'
 import { useCartStore } from '@/contexts/useStore'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export default function Home() {
   const { addProduct } = useCartStore()
+
+  const { cartOpen } = useOpenCart()
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between py-12 lg:p-24">
@@ -38,6 +42,8 @@ export default function Home() {
           </motion.div>
         ))}
       </div>
+
+      <AnimatePresence>{cartOpen && <Cart />}</AnimatePresence>
     </main>
   )
 }
