@@ -3,27 +3,21 @@ import { ShoppingBag } from 'lucide-react'
 import { HtmlHTMLAttributes } from 'react'
 
 type CardProps = HtmlHTMLAttributes<HTMLButtonElement> & {
-  title: string
+  name: string
   price: number
   description: string
-  imageUrl: string
+  photo: string
 }
 
-export function Card({
-  title,
-  price,
-  description,
-  imageUrl,
-  ...props
-}: CardProps) {
+export function Card({ name, price, description, photo, ...props }: CardProps) {
   return (
     <div className="w-[20rem] h-[285] bg-white rounded-lg shadow-xl">
       <div className="flex flex-col p-5">
-        <img src={imageUrl} alt="Placeholder" className="rounded-lg" />
+        <img src={photo} alt="Placeholder" className="rounded-lg" />
 
         <div className="flex flex-row mt-5 items-center justify-between">
           <h3 className="font-normal text-xl text-start max-w-36 text-bg-price">
-            {title}
+            {name}
           </h3>
           <p className="font-bold text-xl bg-bg-price py-1 px-2.5 rounded-lg text-white">
             {formatMoney(price)}

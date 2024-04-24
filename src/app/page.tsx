@@ -16,10 +16,10 @@ export default function Home() {
             transition={{ delay: index * 0.2 }}
           >
             <Card
-              title="Product title"
+              name="Product title"
               price={2499}
               description="Product description"
-              imageUrl="https://via.placeholder.com/150"
+              photo="https://via.placeholder.com/150"
             />
           </motion.div>
         ))}
