@@ -3,7 +3,13 @@ import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 
 import { ProductProps } from '@/schemas/productSchema'
-import { Add, Decrease, Increase, Remove } from './helpers/cartInMemory'
+import {
+  Add,
+  Decrease,
+  Increase,
+  Remove,
+  RemoveAmount,
+} from './helpers/cartInMemory'
 
 export type ProductCartProps = ProductProps & {
   quantity: number
@@ -15,6 +21,7 @@ type StateProps = {
   increaseProduct: (id: string) => void
   decreaseProduct: (id: string) => void
   removeProduct: (id: string) => void
+  removeAmountProduct: (id: string, amount: number) => void
   clearCart: () => void
 }
 
@@ -41,6 +48,12 @@ export const useCartStore = create(
         set((state) => ({
           products: Remove(state.products, id),
         })),
+      removeAmountProduct: (id, amount) =>
+        set((state) => {
+          const newProducts = RemoveAmount(state.products, id, amount)
+          Remove(state.products, id)
+          return { products: newProducts }
+        }),
       clearCart: () => set({ products: [] }),
     }),
     {

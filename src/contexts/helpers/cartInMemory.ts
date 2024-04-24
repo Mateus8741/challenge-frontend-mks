@@ -46,3 +46,15 @@ export function Decrease(products: ProductCartProps[], id: string) {
       : product,
   )
 }
+
+export function RemoveAmount(
+  products: ProductCartProps[],
+  id: string,
+  amount: number,
+) {
+  return products.map((product) =>
+    product.id === Number(id)
+      ? { ...product, quantity: product.quantity - amount }
+      : product,
+  )
+}
