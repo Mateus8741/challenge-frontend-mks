@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         'bg-nav': '#0F52BA',
+
+        'bg-price': '#373737',
       },
     },
   },
