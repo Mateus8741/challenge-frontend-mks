@@ -20,7 +20,7 @@ export function Cart() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="flex flex-col justify-between h-full w-[350px] lg:w-[30rem] bg-bg-nav overflow-y-auto shadow-lg">
+      <div className="flex flex-col justify-between h-full w-[350px] lg:w-[35rem] bg-bg-nav overflow-y-auto shadow-lg">
         <div className="p-6 lg:p-12">
           <div className="flex flex-row justify-between items-center">
             <h2 className="text-3xl text-white font-bold">

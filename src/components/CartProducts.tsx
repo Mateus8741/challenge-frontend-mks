@@ -15,24 +15,27 @@ export function CartProducts(product: ProductProps) {
   }
 
   return (
-    <div className="flex flex-col relative bg-white rounded-xl justify-between items-center">
-      <button className="absolute right-3 top-2" onClick={handleRemoveProduct}>
-        <XIcon size={35} color="black" fill="black" />
+    <div className="flex flex-col relative bg-white rounded-xl justify-between items-center lg:flex-row lg:p-5">
+      <button
+        className="absolute right-3 top-2 lg:-right-4 lg:-top-4 lg:bg-black lg:rounded-full lg:p-1"
+        onClick={handleRemoveProduct}
+      >
+        <XIcon size={35} color="white" fill="black" />
       </button>
 
       <img
         src={product.photo}
         alt={product.name}
-        className="w-52 h-52 rounded-lg mt-2"
+        className="w-52 h-52 rounded-lg mt-2 lg:mt-0 lg:w-20 lg:h-20"
       />
 
-      <p className="text-bg-price text-center mt-2 font-normal">
+      <p className="text-bg-price text-center mt-2 font-normal lg:mt-0">
         {product.name}
       </p>
 
-      <div className="flex flex-row justify-between items-center w-full px-5 py-3">
+      <div className="flex flex-row justify-between items-center w-full px-5 py-3 lg:px-2 lg:pl-4">
         <Counter productId={Number(product.id)} />
-        <p className="font-bold text-lg bg-bg-price py-1 px-2.5 rounded-lg text-white">
+        <p className="font-bold text-lg bg-bg-price py-1 px-2.5 rounded-lg text-white lg:bg-transparent lg:text-black">
           {formatMoney(Number(product.price))}
         </p>
       </div>
