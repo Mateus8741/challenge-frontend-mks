@@ -20,6 +20,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <Nav />
         {children}
+        <footer className="flex items-center justify-center h-12 bg-gray-200">
+          <p className="text-gray-600 text-sm font-medium">
+            MKS Sistemas &copy; Todos os direitos reservados
+          </p>
+        </footer>
       </body>
     </html>
   )
