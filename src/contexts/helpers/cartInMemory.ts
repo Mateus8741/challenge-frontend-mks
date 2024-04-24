@@ -52,9 +52,24 @@ export function RemoveAmount(
   id: string,
   amount: number,
 ) {
-  return products.map((product) =>
-    product.id === Number(id)
-      ? { ...product, quantity: product.quantity - amount }
-      : product,
+  const updatedProducts = products
+    .map((product) =>
+      product.id === Number(id)
+        ? {
+            ...product,
+            quantity: Math.max(product.quantity - amount, 0),
+          }
+        : product,
+    )
+    .filter((product) => product.quantity > 0)
+
+  const productStillExists = updatedProducts.some(
+    (product) => product.id === Number(id),
   )
+
+  if (!productStillExists) {
+    return updatedProducts.filter((product) => product.id !== Number(id))
+  }
+
+  return updatedProducts
 }
