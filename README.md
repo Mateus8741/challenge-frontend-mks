@@ -13,7 +13,7 @@
 2. TanStack Query por questões de performace
 3. Zustand para o contexto geral tanto carrinho, quanto produtos
 4. Jest e Test-Library para fazer testes unitários
-5. Framer Motion para animações
+5. Framer Motion para animações como a de surgimentos dos itens, hover e abertura de carrinho
 
 ## 📄 Api`s
 1. StoreApi: https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api-docs/
