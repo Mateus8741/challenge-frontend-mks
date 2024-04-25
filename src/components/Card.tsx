@@ -1,5 +1,6 @@
 import { ProductProps } from '@/schemas/productSchema'
 import { formatMoney } from '@/utils/formatMoney'
+import { motion } from 'framer-motion'
 import { ShoppingBag } from 'lucide-react'
 import { HtmlHTMLAttributes } from 'react'
 
@@ -9,7 +10,10 @@ type CardProps = HtmlHTMLAttributes<HTMLButtonElement> & {
 
 export function Card({ data, ...props }: CardProps) {
   return (
-    <div className="flex flex-col justify-between items-end w-[20rem] h-[285] bg-white rounded-lg shadow-xl lg:h-[31rem]">
+    <motion.div
+      className="flex flex-col justify-between items-end w-[20rem] h-[285] bg-white rounded-lg shadow-xl lg:h-[31rem]"
+      whileHover={{ scale: 1.05 }}
+    >
       <div className="flex flex-col p-5">
         <img
           src={data.photo}
@@ -39,6 +43,6 @@ export function Card({ data, ...props }: CardProps) {
         <ShoppingBag size={24} className="inline-block mr-2" />
         COMPRAR
       </button>
-    </div>
+    </motion.div>
   )
 }
