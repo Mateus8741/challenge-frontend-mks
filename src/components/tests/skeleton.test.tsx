@@ -1,11 +1,18 @@
-// import Home from '@/app/page'
-// import { render } from '@testing-library/react'
+import { useStoreApi } from '@/api/storeApi'
+import Home from '@/app/page'
+import { render, renderHook } from '@testing-library/react'
+import { wrapper } from '../../../__tests__/mocks/tankStack'
 
-// describe('Component: Skeleton', () => {
-//   it('should render Skeleton component', () => {
-//     const { container } = render(<Home />)
+describe('Component: Skeleton', () => {
+  it('should render Skeleton component', () => {
+    const { result } = renderHook(() => useStoreApi(), { wrapper })
 
-//     const skeleton = container.querySelector('#skeleton-loading')
-//     expect(skeleton).toBeInTheDocument()
-//   }) // needs provider
-// })
+    const { isLoading } = result.current
+
+    const { container } = render(<Home />, { wrapper })
+
+    expect(isLoading).toBe(true)
+
+    expect(container).toBeInTheDocument()
+  })
+})

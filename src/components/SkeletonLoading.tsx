@@ -2,7 +2,7 @@ export function SkeletonLoading() {
   return (
     <div
       className="animate-pulse w-[20rem] h-[285] bg-white rounded-lg shadow-xl"
-      id="skeleton-loading"
+      data-testid="skeleton-loading"
     >
       <div className=" flex flex-col p-5">
         <div className="rounded-lg h-48 bg-bg-price" />
