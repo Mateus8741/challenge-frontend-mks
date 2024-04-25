@@ -17,6 +17,7 @@ export function CartProducts(product: ProductProps) {
   return (
     <div className="flex flex-col relative bg-white rounded-xl mt-3 justify-between items-center lg:flex-row lg:p-5">
       <button
+        data-testid="remove-product"
         className="absolute -right-3 -top-3 bg-black rounded-full p-1"
         onClick={handleRemoveProduct}
       >
