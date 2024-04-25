@@ -1,6 +1,6 @@
 import { useStoreApi } from '@/api/storeApi'
 import { renderHook, waitFor } from '@testing-library/react'
-import { wrapper } from './mocks/tankStack'
+import { wrapper } from './mocks/tankStackProvier'
 
 describe('Hook: getProducts', () => {
   it('should return an array of products', async () => {
