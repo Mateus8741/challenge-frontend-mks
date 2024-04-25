@@ -1,4 +1,4 @@
-import { formatMoney } from './formatMoney'
+import { formatMoney } from '@/utils/formatMoney'
 
 describe('formatMoney function', () => {
   it('should format money correctly for integer values', () => {
