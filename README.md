@@ -46,10 +46,13 @@ npm run dev
 
 ## 🖼️ Pictures
 
-![Screenshot 2024-04-25 at 11 29 50](https://github.com/Mateus8741/challenge-frontend-mks/assets/62652109/40b1ba5f-c830-4c5f-bd9f-25eee699fa01)
-![Screenshot 2024-04-25 at 11 30 10](https://github.com/Mateus8741/challenge-frontend-mks/assets/62652109/70eb1c5d-4d03-4fe9-b34d-f3e2cd30f72e)
-![Simulator Screenshot - iPhone 15 - 2024-04-25 at 11 40 51](https://github.com/Mateus8741/challenge-frontend-mks/assets/62652109/a2801641-be14-42c7-bd47-43863ff772af)
-![Simulator Screenshot - iPhone 15 - 2024-04-25 at 11 41 02](https://github.com/Mateus8741/challenge-frontend-mks/assets/62652109/a970cb5a-b21a-4486-b7f2-64ce45c1d7bf)
+<img src="https://github.com/Mateus8741/challenge-frontend-mks/assets/62652109/40b1ba5f-c830-4c5f-bd9f-25eee699fa01" alt="Imagem de exemplo" height="600">
+
+<img src="https://github.com/Mateus8741/challenge-frontend-mks/assets/62652109/70eb1c5d-4d03-4fe9-b34d-f3e2cd30f72e" alt="Imagem de exemplo" height="600">
+
+<img src="https://github.com/Mateus8741/challenge-frontend-mks/assets/62652109/a2801641-be14-42c7-bd47-43863ff772af" alt="Imagem de exemplo" width="300" height="600">
+
+<img src="https://github.com/Mateus8741/challenge-frontend-mks/assets/62652109/a970cb5a-b21a-4486-b7f2-64ce45c1d7bf" alt="Imagem de exemplo" width="300" height="600">
 
 
 ## 💻 Author
