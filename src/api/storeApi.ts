@@ -2,10 +2,10 @@ import { useQuery } from '@tanstack/react-query'
 import { getProducts } from './apiConfig'
 
 export function useStoreApi() {
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading, error, isSuccess } = useQuery({
     queryKey: ['store'],
     queryFn: async () => getProducts(),
   })
 
-  return { data, isLoading, error }
+  return { data, isLoading, error, isSuccess }
 }

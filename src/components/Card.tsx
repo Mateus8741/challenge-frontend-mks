@@ -32,6 +32,7 @@ export function Card({ data, ...props }: CardProps) {
       </div>
 
       <button
+        data-testid="buy-button"
         className="flex flex-row bg-bg-nav items-center justify-center text-white w-full py-3 rounded-b-lg font-semibold text-base"
         {...props}
       >
