@@ -32,16 +32,20 @@
 ## 🚀 Install
 
 ```sh
-yarn install
 npm  install
 ```
 
 ## 📱 Usage
 
 ```sh
-yarn dev
-or
 npm run dev
+```
+
+## 🧪 Tests
+
+```sh
+npm run test
+npm run test:watch
 ```
 
 ## 🖼️ Pictures
