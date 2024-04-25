@@ -1,4 +1,11 @@
+/* eslint-disable prettier/prettier */
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        domains: [
+            'mks-sistemas.nyc3.digitaloceanspaces.com'
+        ],
+    },
+}
 
-export default nextConfig;
+export default nextConfig

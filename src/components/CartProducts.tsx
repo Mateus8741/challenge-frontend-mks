@@ -2,6 +2,7 @@ import { useCartStore } from '@/contexts/useStore'
 import { ProductProps } from '@/schemas/productSchema'
 import { formatMoney } from '@/utils/formatMoney'
 import { XIcon } from 'lucide-react'
+import Image from 'next/image'
 import { Counter } from './Counter'
 
 export function CartProducts(product: ProductProps) {
@@ -24,9 +25,11 @@ export function CartProducts(product: ProductProps) {
         <XIcon size={25} color="white" fill="black" />
       </button>
 
-      <img
+      <Image
         src={product.photo}
         alt={product.name}
+        width={300}
+        height={300}
         className="w-52 h-52 rounded-lg mt-2 lg:mt-0 lg:w-20 lg:h-20"
       />
 

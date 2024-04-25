@@ -2,6 +2,7 @@ import { ProductProps } from '@/schemas/productSchema'
 import { formatMoney } from '@/utils/formatMoney'
 import { motion } from 'framer-motion'
 import { ShoppingBag } from 'lucide-react'
+import Image from 'next/image'
 import { HtmlHTMLAttributes } from 'react'
 
 type CardProps = HtmlHTMLAttributes<HTMLButtonElement> & {
@@ -15,9 +16,12 @@ export function Card({ data, ...props }: CardProps) {
       whileHover={{ scale: 1.05 }}
     >
       <div className="flex flex-col p-5">
-        <img
+        <Image
           src={data.photo}
           alt={data.name}
+          width={300}
+          height={300}
+          quality={100}
           className="rounded-lg w-full h-[15rem] object-contain"
         />
 
